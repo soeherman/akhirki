@@ -1,0 +1,34 @@
+Berikut daftar kebutuhan proyek Laravel dalam 10 poin yang lebih jelas dan terstruktur:
+
+Fitur Proyek Laravel
+	1.	Autentikasi Pengguna
+	•	Sistem login sederhana (tanpa relasi dengan tabel lain).
+	2.	CRUD dengan Relasi
+	•	Setiap tabel memiliki fitur Create, Read, Update, Delete.
+	•	Data antar tabel memiliki relasi yang sesuai.
+	3.	Notifikasi CRUD & Error Handling
+	•	Setiap aksi CRUD dan error akan menampilkan alert/toastr.
+	4.	Manajemen Data Penjualan
+	•	Dapat memfilter penjualan berdasarkan rentang tanggal.
+	•	Dapat mengekspor laporan penjualan ke dalam format PDF.
+	5.	Pencarian dan Pagination
+	•	Setiap tabel memiliki fitur search untuk pencarian data.
+	•	Data ditampilkan dengan pagination untuk navigasi lebih mudah.
+	•	Jika data kosong, akan muncul pesan “Data kosong”.
+	6.	Manajemen Stok Barang
+	•	Saat barang terjual, stok otomatis berkurang.
+	•	Jika stok barang habis (0), barang tidak dapat dibeli.
+	7.	Pemasokan Barang dari Supplier
+	•	Jika barang menerima pasokan dari supplier, stok barang akan bertambah.
+	8.	Validasi & Keamanan
+	•	Validasi input pada setiap form CRUD untuk mencegah kesalahan data.
+	•	Proteksi terhadap akses ilegal menggunakan middleware Laravel.
+	9.	User Interface (UI) yang Interaktif
+	•	Menggunakan Bootstrap atau Tailwind CSS untuk tampilan responsif.
+	•	Notifikasi interaktif dengan toastr untuk feedback pengguna.
+	10.	Optimasi Performa & Best Practices
+
+	•	Menggunakan Eloquent ORM untuk query yang lebih efisien.
+	•	Mengimplementasikan lazy loading & eager loading untuk mengoptimalkan relasi data.
+
+List ini lebih jelas dan terstruktur. Apakah sudah sesuai dengan kebutuhanmu? 
