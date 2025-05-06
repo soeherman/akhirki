@@ -43,6 +43,12 @@
                   <li><a class="dropdown-item" href="#">Laporan Penjualan</a></li>
                 </ul>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('logout')}}">Keluar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">{{session('yangmasuk')}}</a>
+              </li>
             </ul>
           </div>
         </div>
