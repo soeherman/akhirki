@@ -7,31 +7,36 @@
     <title>Login</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 </head>
-<body>
+<body class="bg-light">
     <div class="container">
-        <h1>Ini Halaman Login</h1>
-        <span>Silahkan masuk dengan username dan password</span>
-    
-        <form method="POST" action="{{url('login')}}">
-            @csrf
-            <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="text" class="form-control" name="username">
+        <div class="row mt-4 justify-content-md-center">
+            <div class="col-md-6">
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p>Silahkan masuk dengan username dan password</p>
+                        </div>
+                        <form method="POST" action="{{url('login')}}">
+                            @csrf
+                            <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username">
+                            </div>
+                            <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password">
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Login">
+                        </form>
+                
+                        @include('message.message')
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password">
-            </div>
-            <input type="submit" class="btn btn-primary" value="Login">
-        </form>
-
-        @if (Session::has('pesan'))
-            <div class="alert mt-2 {{ Session::get('alert-class', 'alert-info') }} alert-dismissible fade show" role="alert">
-                {{ Session::get('pesan') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                    aria-label="Close"></button>
-            </div>
-        @endif
+        </div> 
     </div>
 </body>
 </html>
