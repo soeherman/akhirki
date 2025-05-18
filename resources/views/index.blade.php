@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-          <a class="navbar-brand" href="#">Warung Madura</a>
+          <a class="navbar-brand" href="{{url('')}}">Warung Madura</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -34,7 +34,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="{{url('supplier')}}">Supplier</a></li>
-                    <li><a class="dropdown-item" href="#">Restok Barang</a></li>
+                    <li><a class="dropdown-item" href="{{url('pembelian')}}">Restok Barang</a></li>
                 </ul>
             </li>
               
@@ -43,7 +43,7 @@
                   Penjualan
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Penjualan</a></li>
+                  <li><a class="dropdown-item" href="{{url('penjualan')}}">Penjualan</a></li>
                   <li><a class="dropdown-item" href="#">Laporan Penjualan</a></li>
                 </ul>
               </li>
@@ -52,7 +52,7 @@
                   <i class="fa-solid fa-user"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><h6 class="dropdown-header">{{session('yangmasuk')}}</h6></li>
+                  <li><h6 class="dropdown-header">{{session('namayangmasuk')}}</h6></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{{url('/logout')}}">Keluar</a></li>
                 </ul>

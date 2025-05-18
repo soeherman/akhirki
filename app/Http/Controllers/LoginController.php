@@ -20,7 +20,8 @@ class LoginController extends Controller
         
         $login = Login::where('username', $user)->where('password', $pass)->first();
         if ($login) {
-            session(['yangmasuk' => $user]);
+            session(['namayangmasuk' => $user]);
+            session(['idyangmasuk' => $login->id]);
             return redirect('');
         } else {
             Session::flash('pesan', 'Data yang anda masukkan salah!'); 
