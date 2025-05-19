@@ -12,9 +12,15 @@ class PembeliController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $r)
     {
-        $pembeli = Pembeli::paginate(10);
+        if(empty($r)){
+            $pembeli = Pembeli::paginate(10);
+        }else{
+            $nama = $r->nama_pembeli;
+            $pembeli = Pembeli::where('nama','like','%'.$nama.'%')->paginate(10);
+        }
+        
         return view('pembeli.show', compact('pembeli'));
     }
 

@@ -1,3 +1,15 @@
+## Informasi update 19 Mei 2025
+List Update.
+- Pencarian data
+- Detail Penjualan
+- Cetak PDF menggunakan Dompdf
+
+## Cara install Dompdf
+```
+composer require barryvdh/laravel-dompdf
+```
+lalu tunggu sampai selesai, setelah itu silahkan cek kodingnya di masing-masing folder
+
 ## Informasi update 18 Mei 2025
 
 List Update.

@@ -12,9 +12,14 @@ class SupplierController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $r)
     {
-        $supplier = Supplier::paginate(10);
+        if(empty($r)){
+            $supplier = Supplier::paginate(10);
+        }else{
+            $nama = $r->nama_sup;
+            $supplier = Supplier::where('nama','like','%'.$nama.'%')->paginate(10);
+        }
         return view('supplier.show', compact('supplier'));
     }
 

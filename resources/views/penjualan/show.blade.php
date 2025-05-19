@@ -13,6 +13,22 @@
             </div>
         </div>
         <div class="card-body">
+            <form action="" method="get">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="date" name="tgl_awal" id="" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" name="tgl_akhir" id="" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="submit" value="Cari" class="btn btn-outline-primary">
+                    </div>
+                    <div class="col-md-3 d-flex flex-row-reverse bd-highlight">
+                        <a href="{{url('cetak/penjualan')}}" target="_blank" class="btn btn-outline-danger bd-highlight"><i class="fa-solid fa-file-pdf"></i> Cetak PDF</a>
+                    </div>
+                </div>
+            </form>
             <table class="table table-condensed table-hover">
                 <thead>
                     <tr>
@@ -39,6 +55,7 @@
                                     <form action="{{url('penjualan/'.$r->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
+                                        <a href="{{url('penjualan/'.$r->id)}}" class="btn btn-info btn-sm">Detail</a>
                                         <input onclick="return confirm('Apakah anda yakin akan menghapus data ini ?')" type="submit" class="btn btn-danger btn-sm" value="Hapus">
                                     </form>
                                 </td>

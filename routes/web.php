@@ -22,14 +22,12 @@ use App\Http\Controllers\JsonController;
 |
 */
 
-Route::get('/', [BerandaController::class, 'index']);
-
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'postlogin']);
-Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['ceklogin'])->group(function () {
     // Rute CRUD
+    Route::get('/', [BerandaController::class, 'index']);
     Route::resource('kategori', KategoriController::class);
     Route::resource('barang', BarangController::class);
     Route::resource('pembeli', PembeliController::class);
@@ -39,4 +37,9 @@ Route::middleware(['ceklogin'])->group(function () {
 
     // Rute API
     Route::get('/api/barang/{id}', [JsonController::class, 'getBarangById']);
+    Route::get('/logout', [LoginController::class, 'logout']);
+
+    // Cetak
+    Route::get('/cetak/penjualan', [PenjualanController::class, 'cetak']);
+    Route::get('/cetak/detailpenjualan/{id}', [PenjualanController::class, 'cetakdetail']);
 });

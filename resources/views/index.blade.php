@@ -44,7 +44,6 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="{{url('penjualan')}}">Penjualan</a></li>
-                  <li><a class="dropdown-item" href="#">Laporan Penjualan</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">

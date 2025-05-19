@@ -13,6 +13,9 @@
             </div>
         </div>
         <div class="card-body">
+            <form action="" method="get">
+                <input type="text" class="form-control" placeholder="Cari ..." name="nama_barang">
+            </form>
             <table class="table table-condensed table-hover">
                 <thead>
                     <tr>

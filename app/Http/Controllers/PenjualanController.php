@@ -10,15 +10,23 @@ use App\Models\DetailPenjualan;
 use Session;
 use Validator;
 use DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PenjualanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $r)
     {
-        $penjualan = Penjualan::paginate(10);
+        if(empty($r->tgl_awal) && empty($r->tgl_akhir)){
+            $penjualan = Penjualan::paginate(10);
+        }else{
+            $tgl1 = $r->tgl_awal;
+            $tgl2 = $r->tgl_akhir;
+            $penjualan = Penjualan::wherebetween('tanggal_pesan', [$tgl1, $tgl2])->paginate(10);
+        }
+        
         return view('penjualan.show', compact('penjualan'));
     }
 
@@ -74,9 +82,11 @@ class PenjualanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $penjualan = Penjualan::find($id);
+        $detail = DetailPenjualan::where('penjualan_id',$penjualan->id)->get();
+        return view('penjualan.detail', compact('penjualan','detail'));
     }
 
     /**
@@ -113,5 +123,20 @@ class PenjualanController extends Controller
         Session::flash('alert-class', 'alert-success');
         return redirect('penjualan');
 
+    }
+
+    public function cetak(Request $r){
+        $penjualan = Penjualan::all();
+        $pdf = PDF::loadView('penjualan.cetakpenjualan', compact('penjualan'));
+        $pdf->setOptions(['dpi' => 150]);
+        return $pdf->stream('penjualan.pdf');
+    }
+
+    public function cetakdetail($id){
+        $penjualan = Penjualan::find($id);
+        $detail = DetailPenjualan::where('penjualan_id',$penjualan->id)->get();
+        $pdf = PDF::loadView('penjualan.cetakdetailpenjualan', compact('penjualan','detail'));
+        $pdf->setOptions(['dpi' => 150]);
+        return $pdf->stream('detailpenjualan.pdf');
     }
 }
