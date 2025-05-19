@@ -3,6 +3,7 @@ List Update.
 - Pencarian data
 - Detail Penjualan
 - Cetak PDF menggunakan Dompdf
+- Statistik pada beranda
 
 ## Cara install Dompdf
 ```

@@ -15,7 +15,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #386641 !important;">Rp. 2.000.000</h4>
+                  <h4 class="card-title" style="color: #386641 !important;">Rp. {{number_format($rupiahhariini, 0, '.', '.')}}</h4>
                   <p class="card-text"><small class="text-muted">Transaksi hari ini</small></p>
                 </div>
               </div>
@@ -32,7 +32,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #1e6091 !important;">30</h4>
+                  <h4 class="card-title" style="color: #1e6091 !important;">{{$baranghariini}}</h4>
                   <p class="card-text"><small class="text-muted">Barang terjual</small></p>
                 </div>
               </div>
@@ -49,7 +49,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #3c096c !important;">20</h4>
+                  <h4 class="card-title" style="color: #3c096c !important;">{{$barangmasuk}}</h4>
                   <p class="card-text"><small class="text-muted">Barang masuk</small></p>
                 </div>
               </div>
@@ -66,7 +66,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #603808 !important;">20</h4>
+                  <h4 class="card-title" style="color: #603808 !important;">{{$jumlahtransaksi}}</h4>
                   <p class="card-text"><small class="text-muted">Jumlah transaksi</small></p>
                 </div>
               </div>
